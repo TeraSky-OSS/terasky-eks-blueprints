@@ -1483,3 +1483,16 @@ variable "consul_helm_config" {
   type        = any
   default     = {}
 }
+
+#----------- Fluent Bit OpenSearch Addon-------------
+variable "enable_fluent_bit_opensearch" {
+  description = "Enable Fluent Bit OpenSearch add-on"
+  type        = bool
+  default     = false
+}
+
+variable "fluent_bit_opensearch_helm_config" {
+  description = "Fluent Bit OpenSearch Helm Chart config"
+  type        = any
+  default     = {}
+}

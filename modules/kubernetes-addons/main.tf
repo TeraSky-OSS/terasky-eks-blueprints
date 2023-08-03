@@ -811,3 +811,11 @@ module "consul" {
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
 }
+
+module "fluent_bit_opensearch" {
+  count             = var.enable_fluent_bit_opensearch ? 1 : 0
+  source            = "./fluentbit-opensearch"
+  helm_config       = var.fluent_bit_opensearch_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  addon_context     = local.addon_context
+}

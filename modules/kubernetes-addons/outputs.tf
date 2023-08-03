@@ -317,3 +317,8 @@ output "emr_on_eks" {
   description = "EMR on EKS"
   value       = module.emr_on_eks
 }
+
+output "fluentbit_opensearch" {
+  description = "FluentBit OpenSearch"
+  value       = try(module.fluent_bit_opensearch[0], null)
+}

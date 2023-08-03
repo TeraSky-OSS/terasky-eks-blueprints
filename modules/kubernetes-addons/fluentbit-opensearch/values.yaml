@@ -1,0 +1,43 @@
+serviceAccount:
+  create: false
+  name: aws-for-fluent-bit
+
+cloudWatchLogs:
+  enabled: false
+
+opensearch:
+  enabled: true
+  match: "*"
+  host: "${opensearch_endpoint}"
+  port: "443"
+  tls: "on"
+  path: ""
+  bufferSize: "5m"
+  pipeline:
+  awsRegion: "${aws_region}"
+  awsAuth: "On"
+  awsStsEndpoint:
+  awsRoleArn:
+  awsExternalId:
+  awsServiceName:
+  httpUser:
+  httpPasswd:
+  index: "${opensearch_index}"
+  type: "_doc"
+  logstashFormat: "off"
+  logstashPrefix: "logstash"
+  logstashDateFormat: "%Y.%m.%d"
+  timeKey: "@timestamp"
+  timeKeyFormat: "%Y-%m-%dT%H:%M:%S"
+  timeKeyNanos: "Off"
+  includeTagKey: "Off"
+  tagKey: "_flb-key"
+  generateId: "Off"
+  idKey:
+  writeOperation: "create"
+  replaceDots: "Off"
+  traceOutput: "Off"
+  traceError: "Off"
+  currentTimeIndex: "Off"
+  logstashPrefixKey:
+  suppressTypeName: "On"
